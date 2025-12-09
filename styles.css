@@ -133,10 +133,6 @@ main {
     transform: translateY(-0.0625rem);
 }
 
-.btn:focus, a:focus {
-    outline: 0.125rem solid var(--color-text);
-    outline-offset: 0.125rem;
-}
 
 .hero-social {
     display: flex;
@@ -519,9 +515,9 @@ footer {
         text-align: center;
     }
 
-    .stack-card div {
+    /* .stack-card div {
         display: none;
-    }
+    } */
 
     .stack-icon {
         width: 1.75rem;
