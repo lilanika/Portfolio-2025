@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lila – Portfolio</title>
+
+
+<script>
+    // Test if OG tags are working
+    document.getElementById('og-title').textContent = document.querySelector('meta[property="og:title"]').getAttribute('content');
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lila – Portfolio</title>
+    
+    <!-- Favicon & Social Meta Tags -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta property="og:title" content="Lila – Product Designer & Developer">
+    <!-- ... other meta tags ... -->
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Lila</div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="hero-avatar">
+            <img src="me.png" alt="Lila">
+        </div>
+        
+        <h1>Ahoi World</h1>
+        
+        <p class="hero-tagline">
+            I design and build digital products and services. Moving between product design, frontend code, and UX. Currently traveling the world with my frisbee, building Smarter Goals and occasionally falling off slacklines.
+        </p>
+
+        <div class="hero-cta">
+            <button class="btn btn-primary" onclick="window.location.href='#contact'">Request CV</button>
+            <button class="btn btn-secondary" onclick="window.location.href='#'">Message me</button>
+        </div>
+
+        <div class="hero-social">
+            <a href="https://www.linkedin.com/in/lilanika/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/lilanika/" title="GitHub"target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub">
+            </a>
+            <a href="https://substack.com/@lilanika" title="Substack" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/substack.svg" alt="Substack">
+            </a>
+            <a href="https://medium.com/@lilanika" title="Medium"target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/medium.svg" alt="Medium">
+            </a>
+            <a href="https://www.instagram.com/lila_nika" title="Instagram" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram">
+            </a>
+        </div>
+    </section>
+ 
+
+    <section id="about">
+        <h2 class="section-title">Working Together</h2>
+        <p>I'm open to remote roles in product design, UX/UI, or frontend development, either focused positions where I can deepen one craft, or generalist roles that let me work across disciplines.</p>
+
+        <p>
+            Teams that collaborate openly, share work early, test assumptions, and ship iteratively, that's where I thrive. I believe the best solutions come from testing, not waiting for perfection.
+        </p>
+        <p>If you're looking for someone who will show up, embrace the messy process, and help build something that works, let's talk 💛 ☕</p>
+   
+        <div class="about-content">
+            <div class="about-full" id="about-full">
+                <p>In 2014, I co-founded a pet-sitting service in Hamburg. After several years, I started building websites for local businesses and got curious about code.</p>
+
+                <p>I completed a full-stack bootcamp and worked as a developer at <b><a href="https://markup.ai/product/"rel="noopener noreferrer"> Markup AI </a> </b> but discovered I cared as much about what to build and why as I did about how to build it. That pulled me into product design and UX.</p>
+
+                <p>Beyond roles, I love connecting with people who are building, learning, and staying curious. Whether it's collaboration on a project, co-working somewhere in the world, or chatting about what you're working on over coffee, just DM me. </p>
+            </div>
+            <a class="toggle-link"  target="_blank" rel="noopener noreferrer" onclick="toggleAbout()">More about me →</a>
+        </div>
+    </section>
+<!-- 
+    <section id="stack">
+        <h2 class="section-title">Tools & Stack</h2>
+        
+        <div class="stack-grid">
+            <div class="stack-card">
+                <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                <div>
+                    <strong>React</strong>
+                    <span>Frontend</span>
+                </div>
+            </div>
+
+            <div class="stack-card">
+                <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                <div>
+                    <strong>JavaScript</strong>
+                    <span>Development</span>
+                </div>
+            </div>
+
+            <div class="stack-card">
+                <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                <div>
+                    <strong>Figma</strong>
+                    <span>Design</span>
+                </div>
+            </div>
+
+            <div class="stack-card">
+                <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                <div>
+                    <strong>Node.js</strong>
+                    <span>Backend</span>
+                </div>
+            </div>
+
+            <div class="stack-card">
+                <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                <div>
+                    <strong>MongoDB</strong>
+                    <span>Database</span>
+                </div>
+            </div>
+
+            <div class="stack-card">
+                <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                <div>
+                    <strong>Next.js</strong>
+                    <span>Framework</span>
+                </div>
+            </div>
+
+            <div class="stack-more" id="stack-more">
+                <div class="stack-card">
+                    <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                    <div>
+                        <strong>HTML/CSS</strong>
+                        <span>Frontend</span>
+                    </div>
+                </div>
+
+                <div class="stack-card">
+                    <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                    <div>
+                        <strong>Git</strong>
+                        <span>Version Control</span>
+                    </div>
+                </div>
+
+                <div class="stack-card">
+                    <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="Material UI">
+                    <div>
+                        <strong>Material UI</strong>
+                        <span>Components</span>
+                    </div>
+                </div>
+
+                <div class="stack-card">
+                    <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framer/framer-original.svg" alt="Framer">
+                    <div>
+                        <strong>Framer</strong>
+                        <span>Web Design</span>
+                    </div>
+                </div>
+
+                <div class="stack-card">
+                    <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion">
+                    <div>
+                        <strong>Notion</strong>
+                        <span>Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a class="toggle-link" target="_blank" rel="noopener noreferrer" onclick="toggleStack()">Show more tools →</a>
+    </section> -->
+
+    <section id="work">
+        <h2 class="section-title">Recent Work</h2>
+
+        <div class="work-item">
+            <h3>Rebuilding Sitmycat</h3>
+            <!-- <div class="stack-badges">
+                <span class="stack-badge">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                    UX Design
+                </span>
+                <span class="stack-badge">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framer/framer-original.svg" alt="Framer">
+                    Web Design
+                </span>
+                <span class="stack-badge">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                    Frontend
+                </span>
+            </div> -->
+            <p>After running this Hamburg cat-care service for 10 years, I'm rebuilding the digital presence from the ground up. A 4-part case study covering market research, multi-channel validation, UX design, and technical implementation.</p>
+            <a href="#" class="work-link" target="_blank" rel="noopener noreferrer" >Read the case study →</a>
+        </div>
+
+        <div class="work-item">
+            <h3>Smarter Goals</h3>
+            <!-- <div class="stack-badges">
+                <span class="stack-badge">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                    Product Design
+                </span>
+                <span class="stack-badge">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion">
+                    Planning
+                </span>
+                <span class="stack-badge">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    Development
+                </span>
+            </div> -->
+            <p>For the last two years, I've been traveling and working remotely. Along the way, I met people with incredible ideas who struggled to turn them into consistent action. That inspired Smarter Goals —a productivity system helping idea driven people turn possibilities into consistent execution. Currently in development.</p>
+            <a href="#" class="work-link" target="_blank" rel="noopener noreferrer">Join the newsletter →</a>
+        </div>
+
+        
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/lilanika/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/lilanika/" title="GitHub" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub">
+            </a>
+            <a href="https://substack.com/@lilanika" title="Substack" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/substack.svg" alt="Substack">
+            </a>
+            <a href="https://medium.com/@lilanika" title="Medium" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/medium.svg" alt="Medium">
+            </a>
+            <a href="https://www.instagram.com/lila_nika" title="Instagram" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram">
+            </a>
+        </div>
+
+        <div class="footer-section">
+            <h4>Newsletter</h4>
+            <!-- <p>Case studies, frameworks, and updates while traveling.</p> -->
+            <p> Case studies & insights of building digital products and services. Written on the road, between time zones, powered by coffee ☕</p>
+           
+            <a href="#" target="_blank" rel="noopener noreferrer" >Subscribe →</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        Currently somewhere between Hamburg and decent Wi-Fi
+    </div>
+</footer>
+
+<script>
+// Scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('section:not(.hero)').forEach(section => {
+        observer.observe(section);
+    });
+});
+
+function toggleAbout() {
+    const full = document.getElementById('about-full');
+    const link = event.target;
+    
+    full.classList.toggle('show');
+    link.textContent = full.classList.contains('show') 
+        ? '← Show less' 
+        : 'More about me →';
+}
+
+function toggleStack() {
+    const more = document.getElementById('stack-more');
+    const link = event.target;
+    
+    more.classList.toggle('show');
+    link.textContent = more.classList.contains('show') 
+        ? 'Show less ↑' 
+        : 'Show more tools →';
+}
+
+      
+</script>
+
+</body>
+</html>
