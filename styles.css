@@ -30,6 +30,12 @@ a {
     cursor: pointer;
 }
 
+
+p {
+    font-size: 1rem;
+}
+
+
 /* HEADER */
 header {
     max-width: 56.25rem;
@@ -158,8 +164,8 @@ main {
 }
 
 .hero-social img {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
     object-fit: contain;
 }
 
