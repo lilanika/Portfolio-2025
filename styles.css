@@ -643,6 +643,10 @@
   }
 
   .expanded-close {
+    color: #333 !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
     position: absolute;
     top: 16px;
     right: 16px;
