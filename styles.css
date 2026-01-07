@@ -123,6 +123,8 @@
     margin: 0 auto;
   }
 
+  
+
   /* ===================================
   UTILITY CLASSES
   =================================== */
@@ -282,6 +284,17 @@
     margin-top: 3rem; 
   }
 
+  section {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   /* ===================================
   WORKING TOGETHER SECTION
   =================================== */
@@ -320,6 +333,7 @@
       opacity: 0.4;
     }
   }
+
 
   /* Section Title */
   #working-together h2 {
