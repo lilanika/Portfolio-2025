@@ -1,9 +1,4 @@
-// projects.js - Main application logic
-
-/**
- * ProjectsManager Class
- * Handles project filtering, rendering, and interactions
- */
+/*Handles project filtering, rendering, and interactions */
 class ProjectsManager {
   constructor(data, containerId) {
     this.projects = data;
@@ -19,8 +14,7 @@ class ProjectsManager {
     this.init();
   }
 
-  /**
-   * Initialize the projects manager
+  /* Initialize the projects manager
    */
   init() {
     this.renderProjects();
@@ -133,7 +127,6 @@ class ProjectsManager {
       `
       : "";
 
-    // Screenshots section (if screenshots exist)
     const screenshots =
       project.screenshots && project.screenshots.length > 0
         ? `
@@ -153,7 +146,7 @@ class ProjectsManager {
       `
         : "";
 
-    // Add HR separator before links if no screenshots AND no video
+    // Add HR separator
     const separator =
       !screenshots && !video ? '<hr class="expanded-separator">' : "";
 
@@ -214,8 +207,7 @@ class ProjectsManager {
       `;
   }
 
-  /**
-   * Render all projects to the DOM
+  /* Render all projects to the DOM
    */
   renderProjects() {
     const projectsHTML = this.projects
@@ -236,9 +228,7 @@ class ProjectsManager {
     this.attachCardListeners();
   }
 
-  /**
-   * Filter projects by category
-   * @param {string} filter - Filter category ('all', 'design', 'development')
+  /* Filter projects by category
    */
   filterProjects(filter) {
     this.currentFilter = filter;
@@ -259,9 +249,8 @@ class ProjectsManager {
     });
   }
 
-  /**
+  /*
    * Expand a project card
-   * @param {HTMLElement} card - The card element to expand
    */
   expandCard(card) {
     const projectId = card.dataset.project;
@@ -392,8 +381,7 @@ class ProjectsManager {
   }
 }
 
-/**
- * Toggle "About" section expansion
+/* Toggle "About" section expansion
  */
 function toggleAbout() {
   const full = document.getElementById("about-full");
@@ -407,8 +395,7 @@ function toggleAbout() {
   btn.setAttribute("aria-expanded", !isExpanded);
 }
 
-/**
- * Toggle "Stack" section expansion
+/* Toggle "Stack" section expansion
  */
 function toggleStack() {
   const more = document.getElementById("stack-more");
@@ -422,8 +409,7 @@ function toggleStack() {
   btn.setAttribute("aria-expanded", !isExpanded);
 }
 
-/**
- * Initialize scroll animations for sections
+/*Initialize scroll animations for sections
  */
 function initScrollAnimations() {
   const observerOptions = {
@@ -445,8 +431,7 @@ function initScrollAnimations() {
   });
 }
 
-/**
- * Initialize application when DOM is ready
+/*Initialize application when DOM is ready
  */
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize scroll animations
