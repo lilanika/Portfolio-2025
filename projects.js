@@ -463,5 +463,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize projects manager
   new ProjectsManager(PROJECTS_DATA, "projectsContainer");
 
-  console.log("🚀⚡ Portfolio go brrrrr... initialization complete!");
+  console.log("🚀 Portfolio go brrrrr... initialization complete!");
 });
