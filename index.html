@@ -15,6 +15,286 @@
   </script>
 </head>
 
+<style>
+  :root {
+    --color-bg: #f6f4ef;
+    --color-text: #1a1a1a;
+    --color-text-light: #525252;
+    --color-text-gray: #404040;
+    --color-border: #e5e5e5;
+    --color-surface: #fafafa;
+    --space-xs: 0.375rem;
+    --space-sm: 0.5rem;
+    --space-md: 0.75rem;
+    --space-lg: 1rem;
+    --space-xl: 1.25rem;
+    --space-2xl: 1.5rem;
+    --space-3xl: 2rem;
+    --space-4xl: 2.5rem;
+    --space-5xl: 3rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --container-main: 720px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    padding: 3rem 1.5rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: var(--container-main);
+    margin: 0 auto;
+  }
+
+  /* Main Section */
+  .work-section {
+    background: white;
+    border-radius: 1rem;
+    padding: 3.5rem 3rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    opacity: 0.35;
+    display: inline-block;
+  }
+
+  .work-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--color-text);
+  }
+
+  .work-section p {
+    font-size: 1.0625rem;
+    color: var(--color-text-gray);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Role Tags */
+  .role-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin: 2rem 0;
+  }
+
+  .role-tag {
+    padding: 0.5rem 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.8125rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+  }
+
+  .role-tag:hover {
+    border-color: var(--color-text-light);
+    background: white;
+  }
+
+  /* About Extended */
+  .about-extended {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+
+  .about-extended.show {
+    grid-template-rows: 1fr;
+  }
+
+  .about-extended-inner {
+    min-height: 0;
+  }
+
+  .toggle-link {
+    color: var(--color-text);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 1.25rem;
+    opacity: 0.5;
+    transition: opacity var(--transition-fast);
+  }
+
+  .toggle-link:hover {
+    opacity: 1;
+  }
+
+  /* CTA Buttons */
+  .cta-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .btn {
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    background: var(--color-text);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-text);
+    transform: translateY(-1px);
+  }
+
+  /* Stack Section - Minimal & Clean */
+  .stack-section {
+    margin-top: 3.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .stack-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1.75rem;
+    opacity: 0.35;
+    display: inline-block;
+  }
+
+  /* Icon Strip - Modern Horizontal Layout */
+  .stack-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .stack-icon-item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.75rem 1.125rem;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    border: 1px solid transparent;
+  }
+
+  .stack-icon-item:hover {
+    background: white;
+    border-color: var(--color-border);
+    transform: translateY(-1px);
+  }
+
+  .stack-icon-item img {
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 0.85;
+  }
+
+  .stack-icon-item span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding: 1.5rem 1rem;
+    }
+
+    .work-section {
+      padding: 2.5rem 1.75rem;
+    }
+
+    .work-section h2 {
+      font-size: 1.625rem;
+    }
+
+    .work-section p {
+      font-size: 1rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    .stack-icons {
+      gap: 0.75rem;
+    }
+
+    .stack-icon-item {
+      padding: 0.625rem 0.875rem;
+    }
+
+    .stack-icon-item img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .stack-icon-item span {
+      font-size: 0.8125rem;
+    }
+  }
+</style>
+
 <body>
   <main>
     <section class="hero">
@@ -70,59 +350,13 @@
         </a>
       </div>
     </section>
-    <!-- OPPORTUNITY SECTION -->
-    <section id="working-together">
-      <!-- <div class="status-badge">
-        <span class="status-dot"></span>
-        Open to Opportunities
-      </div> -->
-      <p class="section-title">Let's Build Something Together</p>
-      <p>
-        I design and build digital products—working across UX research, interface
-        design, and frontend development. I'm open to remote roles where I can focus
-        on deepening one craft, or hybrid positions where I work across disciplines.
-      </p>
-      <div class="role-tags">
-        <span class="role-tag">Product Design</span>
-        <span class="role-tag">UX/UI Design</span>
-        <span class="role-tag">Frontend Development</span>
-      </div>
-      <p>
-        Teams that collaborate openly, share work early, test assumptions, and
-        ship iteratively—that's where I thrive.
-      </p>
-      <p>
-        If you're looking for someone who will show up, embrace the messy
-        process, and help build something that works, let's talk 💛 ☕
-      </p>
-      <div class="about-full" id="about-full">
-        <div class="about-full-inner">
-          <p>
-            In 2014, I co-founded a pet-sitting service in Hamburg. After
-            several years, I started building websites for local businesses
-            and got curious about code.
-          </p>
-          <p>
-            I completed a full-stack bootcamp and worked as a developer at
-            <b><a href="https://markup.ai/product/" rel="noopener noreferrer">Markup AI</a></b>
-            but discovered I cared as much about what to build and why as I
-            did about how to build it. That pulled me into product design and
-            UX.
-          </p>
-          <p>
-            Beyond roles, I love connecting with everyone who are building,
-            learning, and staying curious. Whether it's collaboration on a
-            project, co-working somewhere in the world, or chatting about what
-            you're working on over coffee, just DM me.
-          </p>
-        </div>
-      </div>
-      <a class="toggle-link" onclick="toggleAbout()">More about me →</a>
-    </section>
-    </div>
+  
   
     <!-- Filter Navigation -->
     <nav class="project-filters" aria-label="Project filter">
+
+
+
       <button class="filter-btn active" data-filter="all" aria-pressed="true" aria-label="Show all projects">
         All
       </button>
@@ -136,7 +370,162 @@
     <!-- Projects Container (populated by JS) -->
     <div id="projectsContainer" class="projects-list" role="list"></div>
     </section>
-    <section id="stack">
+
+
+    <div class="container">
+      <section class="work-section">
+        <span class="section-label">Work With Me</span>
+        
+        <h2>Let's Build Something Together</h2>
+        
+        <p>
+          I design and build digital products—working across UX research, interface
+          design, and frontend development. I'm open to remote roles where I can focus
+          on deepening one craft, or hybrid positions where I work across disciplines.
+        </p>
+        
+        <div class="role-tags">
+          <span class="role-tag">Product Design</span>
+          <span class="role-tag">UX/UI Design</span>
+          <span class="role-tag">Frontend Development</span>
+        </div>
+        
+        <p>
+          Teams that collaborate openly, share work early, test assumptions, and
+          ship iteratively—that's where I thrive.
+        </p>
+        
+        <p>
+          If you're looking for someone who will show up, embrace the messy
+          process, and help build something that works, let's talk 💛 ☕
+        </p>
+    
+        <div class="about-extended" id="aboutExtended">
+          <div class="about-extended-inner">
+            <p>
+              In 2014, I co-founded a pet-sitting service in Hamburg. After
+              several years, I started building websites for local businesses
+              and got curious about code.
+            </p>
+            <p>
+              I completed a full-stack bootcamp and worked as a developer at
+              <strong>Markup AI</strong>
+              but discovered I cared as much about what to build and why as I
+              did about how to build it. That pulled me into product design and
+              UX.
+            </p>
+            <p>
+              Beyond roles, I love connecting with everyone who are building,
+              learning, and staying curious. Whether it's collaboration on a
+              project, co-working somewhere in the world, or chatting about what
+              you're working on over coffee, just DM me.
+            </p>
+          </div>
+        </div>
+        <a class="toggle-link" onclick="toggleAbout()">More about me →</a>
+    
+        <div class="cta-buttons">
+          <button class="btn btn-primary">Request CV</button>
+          <button class="btn btn-secondary">Message me</button>
+        </div>
+    
+        <!-- Stack Section Inside -->
+        <div class="stack-section">
+          <span class="stack-label">Tools & Technologies</span>
+          
+          <div class="stack-icons">
+            <div class="stack-icon-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+              <span>React</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+              <span>JavaScript</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+              <span>Figma</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+              <span>Node.js</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+              <span>Next.js</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+              <span>MongoDB</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+              <span>HTML/CSS</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+              <span>Git</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="https://cdn.simpleicons.org/framer" alt="Framer">
+              <span>Framer</span>
+            </div>
+            <div class="stack-icon-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion">
+              <span>Notion</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+      <!-- <section id="working-together">
+      
+        <p class="section-title">Let's Build Something Together</p>
+        <p>
+          I design and build digital products—working across UX research, interface
+          design, and frontend development. I'm open to remote roles where I can focus
+          on deepening one craft, or hybrid positions where I work across disciplines.
+        </p>
+        <div class="role-tags">
+          <span class="role-tag">Product Design</span>
+          <span class="role-tag">UX/UI Design</span>
+          <span class="role-tag">Frontend Development</span>
+        </div>
+        <p>
+          Teams that collaborate openly, share work early, test assumptions, and
+          ship iteratively—that's where I thrive.
+        </p>
+        <p>
+          If you're looking for someone who will show up, embrace the messy
+          process, and help build something that works, let's talk 💛 ☕
+        </p>
+        <div class="about-full" id="about-full">
+          <div class="about-full-inner">
+            <p>
+              In 2014, I co-founded a pet-sitting service in Hamburg. After
+              several years, I started building websites for local businesses
+              and got curious about code.
+            </p>
+            <p>
+              I completed a full-stack bootcamp and worked as a developer at
+              <b><a href="https://markup.ai/product/" rel="noopener noreferrer">Markup AI</a></b>
+              but discovered I cared as much about what to build and why as I
+              did about how to build it. That pulled me into product design and
+              UX.
+            </p>
+            <p>
+              Beyond roles, I love connecting with everyone who are building,
+              learning, and staying curious. Whether it's collaboration on a
+              project, co-working somewhere in the world, or chatting about what
+              you're working on over coffee, just DM me.
+            </p>
+          </div>
+        </div>
+        <a class="toggle-link" onclick="toggleAbout()">More about me →</a>
+      </section>
+      </div>
+    <section id="stack"> -->
       <!-- <h2 class="section-title">Tools & Stack</h2> -->
       <div class="stack-grid">
         <div class="stack-card">
