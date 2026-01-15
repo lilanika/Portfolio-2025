@@ -1,483 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lila UX Engineer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "v0ow14j1n9");
+    </script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Lila UX Engineer </title>
-  <link rel="stylesheet" href="styles.css" />
-  <script type="text/javascript">
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "v0ow14j1n9");
-  </script>
-</head>
-
-<style>
-  :root {
-    --color-bg: #f6f4ef;
-    --color-text: #1a1a1a;
-    --color-text-light: #525252;
-    --color-text-gray: #404040;
-    --color-border: #e5e5e5;
-    --color-surface: #fafafa;
-    --space-xs: 0.375rem;
-    --space-sm: 0.5rem;
-    --space-md: 0.75rem;
-    --space-lg: 1rem;
-    --space-xl: 1.25rem;
-    --space-2xl: 1.5rem;
-    --space-3xl: 2rem;
-    --space-4xl: 2.5rem;
-    --space-5xl: 3rem;
-    --radius-md: 0.375rem;
-    --radius-lg: 0.5rem;
-    --radius-xl: 0.75rem;
-    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --container-main: 720px;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
-    background: var(--color-bg);
-    color: var(--color-text);
-    line-height: 1.6;
-    padding: 3rem 1.5rem;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .container {
-    max-width: var(--container-main);
-    margin: 0 auto;
-  }
-
-  /* Main Section */
-  .work-section {
-    background: white;
-    border-radius: 1rem;
-    padding: 3.5rem 3rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    margin-bottom: 3rem;
-  }
-
-  .section-label {
-    font-size: 0.8rem;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    opacity: 0.35;
-    display: inline-block;
-  }
-
-  .work-section h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-    color: var(--color-text);
-  }
-
-  .work-section p {
-    font-size: 1.0625rem;
-    color: var(--color-text-gray);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Role Tags */
-  .role-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.625rem;
-    margin: 2rem 0;
-  }
-
-  .role-tag {
-    padding: 0.5rem 1rem;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-size: 0.8125rem;
-    color: var(--color-text-light);
-    font-weight: 500;
-    transition: all var(--transition-fast);
-  }
-
-  .role-tag:hover {
-    border-color: var(--color-text-light);
-    background: white;
-  }
-
-  /* About Extended */
-  .about-extended {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-  }
-
-  .about-extended.show {
-    grid-template-rows: 1fr;
-  }
-
-  .about-extended-inner {
-    min-height: 0;
-  }
-
-  .toggle-link {
-    color: var(--color-text);
-    font-size: 0.9375rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 1.25rem;
-    opacity: 0.5;
-    transition: opacity var(--transition-fast);
-  }
-
-  .toggle-link:hover {
-    opacity: 1;
-  }
-
-  /* CTA Buttons */
-  .cta-buttons {
-    display: flex;
-    gap: 0.75rem;
-    margin-top: 2.5rem;
-  }
-
-  .btn {
-    padding: 0.875rem 1.75rem;
-    border-radius: var(--radius-md);
-    font-size: 0.9375rem;
-    font-weight: 500;
-    transition: all var(--transition-fast);
-    cursor: pointer;
-    border: none;
-    font-family: inherit;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .btn-primary {
-    background: var(--color-text);
-    color: white;
-  }
-
-  .btn-primary:hover {
-    background: #000;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .btn-secondary {
-    background: transparent;
-    border: 1px solid var(--color-border);
-    color: var(--color-text);
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--color-text);
-    transform: translateY(-1px);
-  }
-
-  /* Stack Section - Minimal & Clean */
-  .stack-section {
-    margin-top: 3.5rem;
-    padding-top: 3rem;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .stack-label {
-    font-size: 0.8rem;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 1.75rem;
-    opacity: 0.35;
-    display: inline-block;
-  }
-
-  /* Icon Strip - Modern Horizontal Layout */
-  .stack-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .stack-icon-item {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    padding: 0.75rem 1.125rem;
-    background: var(--color-surface);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-fast);
-    border: 1px solid transparent;
-  }
-
-  .stack-icon-item:hover {
-    background: white;
-    border-color: var(--color-border);
-    transform: translateY(-1px);
-  }
-
-  .stack-icon-item img {
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0.85;
-  }
-
-  .stack-icon-item span {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-text);
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    body {
-      padding: 1.5rem 1rem;
-    }
-
-    .work-section {
-      padding: 2.5rem 1.75rem;
-    }
-
-    .work-section h2 {
-      font-size: 1.625rem;
-    }
-
-    .work-section p {
-      font-size: 1rem;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-    }
-
-    .btn {
-      width: 100%;
-    }
-
-    .stack-icons {
-      gap: 0.75rem;
-    }
-
-    .stack-icon-item {
-      padding: 0.625rem 0.875rem;
-    }
-
-    .stack-icon-item img {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-
-    .stack-icon-item span {
-      font-size: 0.8125rem;
-    }
-  }
-</style>
-
-<body>
-  <main>
-    <section class="hero">
-      <div class="hero-avatar">
-        <img src="me.png" alt="Lila" />
-      </div>
-      <h1>Ahoi World</h1>
-      <p class="hero-tagline">
-        I bridge design and code to build digital products and services.
-        Working across product design, frontend development, and UX—
-        currently building Smarter Goals and open to remote opportunities.
-      </p>
-      <div class="hero-cta">
-        <button class="btn btn-primary"
-          onclick="window.open('https://www.linkedin.com/in/lilanika', '_blank', 'noopener,noreferrer')">
-          Request CV
-        </button>
-        <button class="btn btn-secondary"
-          onclick="window.open('https://www.linkedin.com/in/lilanika', '_blank', 'noopener,noreferrer')">
-          Message me
-        </button>
-      </div>
-      <div class="hero-social">
-        <a href="https://www.linkedin.com/in/lilanika/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
-        </a>
-        <a href="https://github.com/lilanika/" title="GitHub" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-          </svg>
-        </a>
-        <a href="https://substack.com/@lilanika" title="Substack" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
-          </svg>
-        </a>
-        <a href="https://medium.com/@lilanika" title="Medium" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/lila_nika" title="Instagram" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-          </svg>
-        </a>
-      </div>
-    </section>
-  
-  
-    <!-- Filter Navigation -->
-    <nav class="project-filters" aria-label="Project filter">
-
-
-
-      <button class="filter-btn active" data-filter="all" aria-pressed="true" aria-label="Show all projects">
-        All
-      </button>
-      <button class="filter-btn" data-filter="design" aria-pressed="false" aria-label="Show design projects">
-        UX/UI Design
-      </button>
-      <button class="filter-btn" data-filter="development" aria-pressed="false" aria-label="Show development projects">
-        Development
-      </button>
-    </nav>
-    <!-- Projects Container (populated by JS) -->
-    <div id="projectsContainer" class="projects-list" role="list"></div>
-    </section>
-
-
-    <div class="container">
-      <section class="work-section">
-        <span class="section-label">Work With Me</span>
-        
-        <h2>Let's Build Something Together</h2>
-        
-        <p>
-          I design and build digital products—working across UX research, interface
-          design, and frontend development. I'm open to remote roles where I can focus
-          on deepening one craft, or hybrid positions where I work across disciplines.
-        </p>
-        
-        <div class="role-tags">
-          <span class="role-tag">Product Design</span>
-          <span class="role-tag">UX/UI Design</span>
-          <span class="role-tag">Frontend Development</span>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="hero-avatar">
+          <img src="me.png" alt="Lila" />
         </div>
-        
-        <p>
-          Teams that collaborate openly, share work early, test assumptions, and
-          ship iteratively—that's where I thrive.
+        <h1>Ahoi World</h1>
+        <p class="hero-tagline">
+          I bridge design and code to build digital products and services.
+          Working across product design, frontend development, and UX— currently
+          building Smarter Goals and open to remote opportunities.
         </p>
-        
-        <p>
-          If you're looking for someone who will show up, embrace the messy
-          process, and help build something that works, let's talk 💛 ☕
-        </p>
-    
-        <div class="about-extended" id="aboutExtended">
-          <div class="about-extended-inner">
-            <p>
-              In 2014, I co-founded a pet-sitting service in Hamburg. After
-              several years, I started building websites for local businesses
-              and got curious about code.
-            </p>
-            <p>
-              I completed a full-stack bootcamp and worked as a developer at
-              <strong>Markup AI</strong>
-              but discovered I cared as much about what to build and why as I
-              did about how to build it. That pulled me into product design and
-              UX.
-            </p>
-            <p>
-              Beyond roles, I love connecting with everyone who are building,
-              learning, and staying curious. Whether it's collaboration on a
-              project, co-working somewhere in the world, or chatting about what
-              you're working on over coffee, just DM me.
-            </p>
-          </div>
+        <div class="hero-cta">
+          <button
+            class="btn btn-primary"
+            onclick="window.open('https://www.linkedin.com/in/lilanika', '_blank', 'noopener,noreferrer')"
+          >
+            Request CV
+          </button>
+          <button
+            class="btn btn-secondary"
+            onclick="window.open('https://www.linkedin.com/in/lilanika', '_blank', 'noopener,noreferrer')"
+          >
+            Message me
+          </button>
         </div>
-        <a class="toggle-link" onclick="toggleAbout()">More about me →</a>
-    
-        <div class="cta-buttons">
-          <button class="btn btn-primary">Request CV</button>
-          <button class="btn btn-secondary">Message me</button>
-        </div>
-    
-        <!-- Stack Section Inside -->
-        <div class="stack-section">
-          <span class="stack-label">Tools & Technologies</span>
-          
-          <div class="stack-icons">
-            <div class="stack-icon-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-              <span>React</span>
-            </div>
-            <div class="stack-icon-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-              <span>JavaScript</span>
-            </div>
-            <div class="stack-icon-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
-              <span>Figma</span>
-            </div>
-            <div class="stack-icon-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-              <span>Node.js</span>
-            </div>
-            <div class="stack-icon-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
-              <span>Next.js</span>
-            </div>
-            <div class="stack-icon-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
-              <span>MongoDB</span>
-            </div>
-            <div class="stack-icon-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-              <span>HTML/CSS</span>
-            </div>
-            <div class="stack-icon-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-              <span>Git</span>
-            </div>
-            <div class="stack-icon-item">
-              <img src="https://cdn.simpleicons.org/framer" alt="Framer">
-              <span>Framer</span>
-            </div>
-            <div class="stack-icon-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion">
-              <span>Notion</span>
-            </div>
-          </div>
+        <div class="hero-social">
+          <a
+            href="https://www.linkedin.com/in/lilanika/"
+            title="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/lilanika/"
+            title="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://substack.com/@lilanika"
+            title="Substack"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://medium.com/@lilanika"
+            title="Medium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/lila_nika"
+            title="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              />
+            </svg>
+          </a>
         </div>
       </section>
-    </div>
+
+      <!-- Filter Navigation -->
+      <nav class="project-filters" aria-label="Project filter">
+        <button
+          class="filter-btn active"
+          data-filter="all"
+          aria-pressed="true"
+          aria-label="Show all projects"
+        >
+          All
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="design"
+          aria-pressed="false"
+          aria-label="Show design projects"
+        >
+          UX/UI Design
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="development"
+          aria-pressed="false"
+          aria-label="Show development projects"
+        >
+          Development
+        </button>
+      </nav>
+      <!-- Projects Container (populated by JS) -->
+      <div id="projectsContainer" class="projects-list" role="list"></div>
 
       <!-- <section id="working-together">
       
@@ -526,208 +188,312 @@
       </section>
       </div>
     <section id="stack"> -->
-      <!-- <h2 class="section-title">Tools & Stack</h2> -->
-      <div class="stack-grid">
-        <div class="stack-card">
-          <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-            alt="React" />
-          <div>
-            <strong>React</strong>
-            <span>Frontend</span>
-          </div>
-        </div>
-        <div class="stack-card">
-          <img class="stack-icon"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-            alt="JavaScript" />
-          <div>
-            <strong>JavaScript</strong>
-            <span>Development</span>
-          </div>
-        </div>
-        <div class="stack-card">
-          <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-            alt="Figma" />
-          <div>
-            <strong>Figma</strong>
-            <span>Design</span>
-          </div>
-        </div>
-        <div class="stack-card">
-          <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-            alt="Node.js" />
-          <div>
-            <strong>Node.js</strong>
-            <span>Backend</span>
-          </div>
-        </div>
-        <div class="stack-card">
-          <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-            alt="MongoDB" />
-          <div>
-            <strong>MongoDB</strong>
-            <span>Database</span>
-          </div>
-        </div>
-        <div class="stack-card">
-          <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-            alt="Next.js" />
-          <div>
-            <strong>Next.js</strong>
-            <span>Framework</span>
-          </div>
-        </div>
-        <div class="stack-more" id="stack-more">
+
+      <section id="stack">
+        <div class="stack-grid">
           <div class="stack-card">
-            <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-              alt="HTML5" />
+            <img
+              class="stack-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+              alt="React"
+            />
             <div>
-              <strong>HTML/CSS</strong>
+              <strong>React</strong>
               <span>Frontend</span>
             </div>
           </div>
           <div class="stack-card">
-            <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-              alt="Git" />
+            <img
+              class="stack-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+            />
             <div>
-              <strong>Git</strong>
-              <span>Version Control</span>
+              <strong>JavaScript</strong>
+              <span>Development</span>
             </div>
           </div>
           <div class="stack-card">
-            <img class="stack-icon"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
-              alt="Material UI" />
+            <img
+              class="stack-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+              alt="Figma"
+            />
             <div>
-              <strong>Material UI</strong>
-              <span>Components</span>
+              <strong>Figma</strong>
+              <span>Design</span>
             </div>
           </div>
           <div class="stack-card">
-            <img class="stack-icon" src="https://cdn.simpleicons.org/framer" alt="Framer" />
+            <img
+              class="stack-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+              alt="Node.js"
+            />
             <div>
-              <strong>Framer</strong>
-              <span>Web Design</span>
+              <strong>Node.js</strong>
+              <span>Backend</span>
             </div>
           </div>
           <div class="stack-card">
-            <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg"
-              alt="Notion" />
+            <img
+              class="stack-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+              alt="MongoDB"
+            />
             <div>
-              <strong>Notion</strong>
-              <span>Management</span>
+              <strong>MongoDB</strong>
+              <span>Database</span>
             </div>
           </div>
           <div class="stack-card">
-            <img class="stack-icon" src="https://tally.so/favicon.ico" alt="Tally" />
+            <img
+              class="stack-icon"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+              alt="Next.js"
+            />
             <div>
-              <strong>Tally.so</strong>
-              <span>Forms</span>
+              <strong>Next.js</strong>
+              <span>Framework</span>
             </div>
           </div>
-          <div class="stack-card">
-            <img class="stack-icon" src="https://cdn.simpleicons.org/make" alt="Make" />
-            <div>
-              <strong>Make</strong>
-              <span>Automation</span>
+          <div class="stack-more" id="stack-more">
+            <div class="stack-card">
+              <img
+                class="stack-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML5"
+              />
+              <div>
+                <strong>HTML/CSS</strong>
+                <span>Frontend</span>
+              </div>
             </div>
-          </div>
-          <div class="stack-card">
-            <img class="stack-icon" src="https://www.google.com/s2/favicons?domain=mailerlite.com&sz=64"
-              alt="MailerLite" />
-            <div>
-              <strong>Mailerlite</strong>
-              <span>Email Marketing</span>
+            <div class="stack-card">
+              <img
+                class="stack-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                alt="Git"
+              />
+              <div>
+                <strong>Git</strong>
+                <span>Version Control</span>
+              </div>
             </div>
-          </div>
-          <div class="stack-card">
-            <img class="stack-icon" src="https://cdn.worldvectorlogo.com/logos/cloudinary-2.svg" alt="Cloudinary" />
-            <div>
-              <strong>Cloudinary</strong>
-              <span>Media Management</span>
+            <div class="stack-card">
+              <img
+                class="stack-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
+                alt="Material UI"
+              />
+              <div>
+                <strong>Material UI</strong>
+                <span>Components</span>
+              </div>
+            </div>
+            <div class="stack-card">
+              <img
+                class="stack-icon"
+                src="https://cdn.simpleicons.org/framer"
+                alt="Framer"
+              />
+              <div>
+                <strong>Framer</strong>
+                <span>Web Design</span>
+              </div>
+            </div>
+            <div class="stack-card">
+              <img
+                class="stack-icon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg"
+                alt="Notion"
+              />
+              <div>
+                <strong>Notion</strong>
+                <span>Management</span>
+              </div>
+            </div>
+            <div class="stack-card">
+              <img
+                class="stack-icon"
+                src="https://tally.so/favicon.ico"
+                alt="Tally"
+              />
+              <div>
+                <strong>Tally.so</strong>
+                <span>Forms</span>
+              </div>
+            </div>
+            <div class="stack-card">
+              <img
+                class="stack-icon"
+                src="https://cdn.simpleicons.org/make"
+                alt="Make"
+              />
+              <div>
+                <strong>Make</strong>
+                <span>Automation</span>
+              </div>
+            </div>
+            <div class="stack-card">
+              <img
+                class="stack-icon"
+                src="https://www.google.com/s2/favicons?domain=mailerlite.com&sz=64"
+                alt="MailerLite"
+              />
+              <div>
+                <strong>Mailerlite</strong>
+                <span>Email Marketing</span>
+              </div>
+            </div>
+            <div class="stack-card">
+              <img
+                class="stack-icon"
+                src="https://cdn.worldvectorlogo.com/logos/cloudinary-2.svg"
+                alt="Cloudinary"
+              />
+              <div>
+                <strong>Cloudinary</strong>
+                <span>Media Management</span>
+              </div>
             </div>
           </div>
         </div>
+        <a
+          class="toggle-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="toggleStack()"
+          >Show more tools →</a
+        >
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-social">
+          <a
+            href="https://www.linkedin.com/in/lilanika/"
+            title="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <title>LinkedIn</title>
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/lilanika/"
+            title="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <title>GitHub</title>
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://substack.com/@lilanika"
+            title="Substack"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <title>Substack</title>
+              <path
+                d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://medium.com/@lilanika"
+            title="Medium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <title>Medium</title>
+              <path
+                d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/lila_nika"
+            title="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <title>Instagram</title>
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="footer-section">
+          <h4>Newsletter</h4>
+          <!-- <p>Case studies, frameworks, and updates while traveling.</p> -->
+          <p>
+            Case studies & insights of building digital products and services.
+            Written on the road, between time zones, powered by coffee ☕
+          </p>
+          <a
+            href="https://lilanika.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Subscribe →</a
+          >
+        </div>
       </div>
-      <a class="toggle-link" target="_blank" rel="noopener noreferrer" onclick="toggleStack()">Show more tools →</a>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/lilanika/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <title>LinkedIn</title>
-            <path
-              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
-        </a>
-        <a href="https://github.com/lilanika/" title="GitHub" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <title>GitHub</title>
-            <path
-              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-          </svg>
-        </a>
-        <a href="https://substack.com/@lilanika" title="Substack" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <title>Substack</title>
-            <path
-              d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
-          </svg>
-        </a>
-        <a href="https://medium.com/@lilanika" title="Medium" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <title>Medium</title>
-            <path
-              d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/lila_nika" title="Instagram" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <title>Instagram</title>
-            <path
-              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-          </svg>
-        </a>
-      </div>
-      <div class="footer-section">
-        <h4>Newsletter</h4>
-        <!-- <p>Case studies, frameworks, and updates while traveling.</p> -->
-        <p>
-          Case studies & insights of building digital products and services.
-          Written on the road, between time zones, powered by coffee ☕
-        </p>
-        <a href="https://lilanika.substack.com" target="_blank" rel="noopener noreferrer">Subscribe →</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      Build with HTML CSS & Simple Javascript
-    </div>
-  </footer>
-  <script>
+      <div class="footer-bottom">Build with HTML CSS & Simple Javascript</div>
+    </footer>
+    <script>
+      function toggleAbout() {
+        const full = document.getElementById("about-full");
+        const link = event.target;
+        const isExpanded = full.classList.toggle("show");
 
-    function toggleAbout() {
-      const full = document.getElementById("about-full");
-      const link = event.target;
-      const isExpanded = full.classList.toggle("show");
+        link.setAttribute("aria-expanded", isExpanded);
+        link.textContent = isExpanded ? "← Show less" : "More about me →";
+      }
 
-      link.setAttribute("aria-expanded", isExpanded);
-      link.textContent = isExpanded ? "← Show less" : "More about me →";
-    }
+      function toggleStack() {
+        const more = document.getElementById("stack-more");
+        const link = event.target;
 
-    function toggleStack() {
-      const more = document.getElementById("stack-more");
-      const link = event.target;
+        more.classList.toggle("show");
+        link.textContent = more.classList.contains("show")
+          ? "Show less ↑"
+          : "Show more tools →";
+      }
+    </script>
 
-      more.classList.toggle("show");
-      link.textContent = more.classList.contains("show")
-        ? "Show less ↑"
-        : "Show more tools →";
-    }
-  </script>
-  <script src="projects-data.js"></script>
-  <script src="projects.js"></script>
-</body>
+    <script src="/projects.js" defer></script>
+    <script src="/projects-data.js" defer></script>
 
+    <!-- Load data ONLY when needed -->
+    <script>
+      // Wait for DOM to be interactive
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check if projects data is needed on this page
+        const needsProjectsData = document.querySelector(".projects-section");
+
+        if (needsProjectsData) {
+          // Load data with a small delay
+          setTimeout(() => {
+            const script = document.createElement("script");
+            script.src = "/projects-data.js";
+            document.body.appendChild(script);
+          }, 500); // Half second delay
+        }
+      });
+    </script>
+  </body>
 </html>

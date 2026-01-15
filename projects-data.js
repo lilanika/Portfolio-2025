@@ -11,8 +11,8 @@ const PROJECTS_DATA = [
     timeline: "4 weeks",
     year: "2025",
     team: null,
-    thumbnail: "/pictures/sitmycat-thumb.png",
-    heroImage: "/pictures/sitmycat-thumb.png",
+    thumbnail: "/pictures/sitmycat-thumb.webp",
+    heroImage: "/pictures/sitmycat-thumb.webp",
     tech: [
       { name: "Figma", icon: "figma/figma-original.svg" },
       { name: "Notion", icon: "notion/notion-original.svg" },
@@ -63,7 +63,7 @@ const PROJECTS_DATA = [
       "Methods for both AI-assisted and manual pattern recognition",
       "Free downloadable Notion document",
     ],
-    screenshots: ["/pictures/constrains-framework.png"],
+    screenshots: ["/pictures/constraints-framework.webp"],
     links: [
       {
         label: "Download Free",
@@ -89,8 +89,8 @@ const PROJECTS_DATA = [
     timeline: "Ongoing",
     year: "2023",
     team: 3,
-    thumbnail: "/pictures/mate-thumb.png",
-    heroImage: "/pictures/mate-thumb.png",
+    thumbnail: "/pictures/mate-thumb.webp",
+    heroImage: "/pictures/mate-thumb.webp",
     tech: [
       { name: "Figma", icon: "figma/figma-original.svg" },
       { name: "TypeScript", icon: "typescript/typescript-original.svg" },
@@ -102,7 +102,7 @@ const PROJECTS_DATA = [
       "Group chat for coordinating meetup detail",
       "Designed for both travelers and locals",
     ],
-    screenshots: ["/pictures/mate.png"],
+    screenshots: ["/pictures/mate.webp"],
     links: [
       {
         label: "View Code",
@@ -147,7 +147,7 @@ const PROJECTS_DATA = [
       "Profile photos with Cloudinary integration",
       "Responsive Design",
     ],
-    screenshots: ["/pictures/papagei-new.png"],
+    screenshots: ["/pictures/papagei.webp"],
     links: [
       {
         label: "View Website",
@@ -173,8 +173,8 @@ const PROJECTS_DATA = [
     timeline: "5 days",
     year: "2021",
     team: 2,
-    thumbnail: "/pictures/wander-thumb.png",
-    heroImage: "/pictures/wander-thumb.png",
+    thumbnail: "/pictures/wander-thumb.webp",
+    heroImage: "/pictures/wander-thumb.webp",
     tech: [
       { name: "MongoDB", icon: "mongodb/mongodb-original.svg" },
       { name: "Express", icon: "express/express-original.svg" },
@@ -213,8 +213,8 @@ const PROJECTS_DATA = [
     timeline: "7 days",
     year: "2021",
     team: null,
-    thumbnail: "pictures/bubbles-game.png?w=1200&h=600&fit=crop",
-    heroImage: "pictures/bubbles-game.png?w=1200&h=600&fit=crop",
+    thumbnail: "pictures/bubbles.webp?w=1200&h=600&fit=crop",
+    heroImage: "pictures/bubbles.webp?w=1200&h=600&fit=crop",
     tech: [
       { name: "JavaScript", icon: "javascript/javascript-original.svg" },
       { name: "HTML5", icon: "html5/html5-original.svg" },
